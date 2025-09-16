@@ -6,6 +6,44 @@
       <AdditionalIncludeDirectories>$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);DLLEXPORT=__declspec(dllexport);BROTLI_SHARED_COMPILATION</PreprocessorDefinitions>
     </ClCompile>
+    
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\enc\command.c">
+    	<CompileAs>CompileAsC</CompileAs>
+    	<AdditionalIncludeDirectories >$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include;% (AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    	<PreprocessorDefinitions>%(PreprocessorDefinitions);DLLEXPORT=__declspec(dllexport);BROTLI_SHARED_COMPILATION</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\enc\fast_log.c">
+    	<CompileAs>CompileAsC</CompileAs>
+    	<AdditionalIncludeDirectories>$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    	<PreprocessorDefinitions>%(PreprocessorDefinitions);DLLEXPORT=__declspec(dllexport);BROTLI_SHARED_COMPILATION</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\enc\encoder_dict.c">
+    	<CompileAs>CompileAsC</CompileAs>
+    	<AdditionalIncludeDirectories>$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    	<PreprocessorDefinitions>%(PreprocessorDefinitions);DLLEXPORT=__declspec(dllexport);BROTLI_SHARED_COMPILATION</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\constants.c">
+    	<CompileAs>CompileAsC</CompileAs>
+    	<AdditionalIncludeDirectories>$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    	<PreprocessorDefinitions>%(PreprocessorDefinitions);DLLEXPORT=__declspec(dllexport);BROTLI_SHARED_COMPILATION</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\context.c">
+    	<CompileAs>CompileAsC</CompileAs>
+    	<AdditionalIncludeDirectories>$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    	<PreprocessorDefinitions>%(PreprocessorDefinitions);DLLEXPORT=__declspec(dllexport);BROTLI_SHARED_COMPILATION</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\transform.c">
+    	<CompileAs>CompileAsC</CompileAs>
+    	<AdditionalIncludeDirectories>$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    	<PreprocessorDefinitions>%(PreprocessorDefinitions);DLLEXPORT=__declspec(dllexport);BROTLI_SHARED_COMPILATION</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\platform.c">
+    	<CompileAs>CompileAsC</CompileAs>
+    	<AdditionalIncludeDirectories>$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    	<PreprocessorDefinitions>%(PreprocessorDefinitions);DLLEXPORT=__declspec(dllexport);BROTLI_SHARED_COMPILATION</PreprocessorDefinitions>
+    </ClCompile>
+    
+
     <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\dec\bit_reader.c">
       <CompileAs>CompileAsC</CompileAs>
       <AdditionalIncludeDirectories>$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -166,6 +204,12 @@
     <ClInclude Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include\brotli\encode.h"/>
     <ClInclude Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include\brotli\port.h"/>
     <ClInclude Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include\brotli\types.h"/>
+
+<ClInclude Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\context.h"/>
+<ClInclude Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\transform.h"/>
+<ClInclude Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\platform.h"/>
+<ClInclude Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\enc\encoder_dict.h"/>						
+
 
   </ItemGroup>
 </Project>

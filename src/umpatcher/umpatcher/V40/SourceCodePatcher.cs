@@ -59,7 +59,7 @@ namespace UnityMonoDllSourceCodePatcher.V40 {
 			Patch_bdwgc_gcconfig_h();
 
 			// 'fix' for updated toolset version
-			if (solutionOptions.PlatformToolset == "v143") { 
+			if (solutionOptions.PlatformToolset == "v143" && solutionOptions.UnityVersion.Major != 2022) { 
 				Patch2021_mono_metadata_metadata_c();
 			}
 		}

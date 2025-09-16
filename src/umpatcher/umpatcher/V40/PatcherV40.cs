@@ -60,14 +60,15 @@ namespace UnityMonoDllSourceCodePatcher.V40 {
 
 		protected override void PatchOriginalFilesCore() {
 			Console.WriteLine("Patching solution and projects");
-			if (solutionOptions.UnityVersion.Major == 2021 || solutionOptions.UnityVersion.Major == 2020) {
-				var cleanSolFile = $"clean-dnSpy-Unity-mono-v{solutionOptions.UnityVersion.Major}.x-V40.sln";				File.Copy(cleanSolFile, solutionOptions.SolutionFilename, overwrite: true);
+			if (solutionOptions.UnityVersion.Major == 2021 || solutionOptions.UnityVersion.Major == 2020 || solutionOptions.UnityVersion.Major == 2022) {
+				var cleanSolFile = $"clean-dnSpy-Unity-mono-v{solutionOptions.UnityVersion.Major}.x-V40.sln";
+				File.Copy(cleanSolFile, solutionOptions.SolutionFilename, overwrite: true);
 			}
 
 
 			new SolutionPatcher(solutionOptions).Patch();
 
-			if (solutionOptions.UnityVersion.Major == 2021) {
+			if (solutionOptions.UnityVersion.Major == 2021 || solutionOptions.UnityVersion.Major == 2022) {
 				// quick and dirty fix for corefx libs
 				foreach (var kv in ConstantsV40.UnityFoldersToOverwrite_2021) {
 					FileUtils.CopyDirectoryFromTo(PathCombine(unityRepo.RepoPath, kv.Key), PathCombine(dnSpyVersionPath, kv.Value), overwrite: true);
@@ -94,9 +95,9 @@ namespace UnityMonoDllSourceCodePatcher.V40 {
 			Console.WriteLine("Patching source files");
 			var sp = new SourceCodePatcher(solutionOptions);
 
-
 			switch (solutionOptions.UnityVersion.Major) {
 				case 2021:
+				case 2022:
 				sp.Patch2021();
 				break;
 				case 2020:

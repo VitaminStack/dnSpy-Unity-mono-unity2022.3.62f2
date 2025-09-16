@@ -23,7 +23,7 @@
     <ClInclude Include="..\winconfig.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{349AB775-8B9F-422E-B1F1-9C09749AA8F3}</ProjectGuid>
+    <ProjectGuid>{2EFA3881-4334-4E53-B6D9-F236717AE229}</ProjectGuid>
     <RootNamespace>buildinit</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>

@@ -4,6 +4,42 @@
     <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\dictionary.c">
       <Filter>Source Files$(ClrCompressionFilterSubFolder)</Filter>
     </ClCompile>
+    
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\enc\command.c">
+    	<Filter>Source Files$(ClrCompressionFilterSubFolder)</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\enc\fast_log.c">
+    	<Filter>Source Files$(ClrCompressionFilterSubFolder)</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\enc\encoder_dict.c">
+    	<Filter>Source Files$(ClrCompressionFilterSubFolder)</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\constants.c">
+    	<Filter>Source Files$(ClrCompressionFilterSubFolder)</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\context.c">
+    	<Filter>Source Files$(ClrCompressionFilterSubFolder)</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\transform.c">
+    	<Filter>Source Files$(ClrCompressionFilterSubFolder)</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\platform.c">
+    	<Filter>Source Files$(ClrCompressionFilterSubFolder)</Filter>
+    </ClCompile>
+    <ClInclude Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\context.h">
+    	<Filter>Header Files$(ClrCompressionFilterSubFolder)</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\transform.h">
+    	<Filter>Header Files$(ClrCompressionFilterSubFolder)</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\common\platform.h">
+    	<Filter>Header Files$(ClrCompressionFilterSubFolder)</Filter>
+    </ClInclude>
+    	<ClInclude Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\include\brotli\types.h">
+    	<Filter>Header Files$(ClrCompressionFilterSubFolder)</Filter>
+    </ClInclude>
+    
+
     <ClCompile Include="$(MonoSourceLocation)\external\corefx\src\Native\AnyOS\brotli\dec\bit_reader.c">
       <Filter>Source Files$(ClrCompressionFilterSubFolder)</Filter>
     </ClCompile>
