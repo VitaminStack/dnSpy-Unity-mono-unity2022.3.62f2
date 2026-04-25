@@ -1,5 +1,3 @@
-Ja — hier ist eine auf **deine Version `2022.3.62f2`** zugeschnittene README als vollständige Ersatzfassung. Grundlage ist deine hochgeladene README. 
-
 ````md
 # dnSpy Unity Mono for Unity 2022.3.62f2
 
