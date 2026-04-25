@@ -1,9 +1,8 @@
-````md
 # dnSpy Unity Mono for Unity 2022.3.62f2
 
 _Custom dnSpy-compatible Mono build for Unity 2022.3.62f2 / Cities: Skylines II_
 
-Based on the original dnSpy Unity mono work by Neoshrimp and later community updates.
+Based on the original dnSpy Unity mono work by Neoshrimp and later community updates.  
 This repository is a cleaned and focused version for **Unity 2022.3.62f2 only**.
 
 ---
@@ -13,12 +12,13 @@ This repository is a cleaned and focused version for **Unity 2022.3.62f2 only**.
 This repository contains the patched Unity mono source tree and Visual Studio solution needed to build a dnSpy/debugger-compatible version of:
 
 - `mono-2.0-bdwgc.dll`
-- optional matching `.pdb`
+- the matching `.pdb`
 
-Primary use case:
+Primary use cases:
 
 - debugging Mono/.NET code in **Unity 2022.3.62f2**
-- especially useful for games using `MonoBleedingEdge`, such as **Cities: Skylines II**
+- debugging games that use **MonoBleedingEdge**
+- especially useful for **Cities: Skylines II**
 
 ---
 
@@ -69,8 +69,8 @@ Recommended environment:
 Toolset notes:
 
 - Unity 2022.x works with modern VS2022 toolchains
-- In practice, **v143** is appropriate for this repository
-- Some original projects may still prompt for toolset upgrade when opened in Visual Studio
+- **v143** is the expected toolset for this repository
+- some original projects may still prompt for toolset upgrade when opened in Visual Studio
 
 ---
 
@@ -87,11 +87,11 @@ Recommended settings:
 
 Main projects of interest:
 
-- `eglib`
-- `genmdesc`
-- `libgc`
-- `libmono`
-- `libmono-dynamic`
+1. `eglib`
+2. `genmdesc`
+3. `libgc`
+4. `libmono`
+5. `libmono-dynamic`
 
 ---
 
@@ -114,13 +114,13 @@ Expected output location:
 
 ## Notes about source fixes
 
-While preparing this version, some project/build path issues had to be resolved due to layout differences between older dnSpy Unity mono repos and Unity 2022.3.62f2.
+While preparing this version, several project and build path issues had to be resolved due to layout differences between older dnSpy Unity mono repos and Unity 2022.3.62f2.
 
 Typical fixes included:
 
 - Boehm GC source/include path adjustments
-- support/libm path restoration
-- corefx/brotli related source path fixes
+- `support/libm` path restoration
+- `corefx/brotli` related source path fixes
 - successful rebuild of all 5 required projects
 - generation of a working `mono-2.0-bdwgc.dll` for runtime replacement
 
@@ -136,16 +136,16 @@ Example target path for Cities: Skylines II:
 
 Typical replacement workflow:
 
-1. Back up the original DLL
-2. Copy in the newly built `mono-2.0-bdwgc.dll`
-3. Copy the matching `mono-2.0-bdwgc.pdb` beside it
-4. Start the game
-5. Attach dnSpy / debugger
+1. Back up the original DLL.
+2. Copy in the newly built `mono-2.0-bdwgc.dll`.
+3. Copy the matching `mono-2.0-bdwgc.pdb` beside it.
+4. Start the game.
+5. Attach dnSpy or Visual Studio.
 
 Important:
 
 - make sure the game actually loads the replaced DLL
-- verify loaded module path in Process Explorer / debugger / PowerShell
+- verify the loaded module path in Process Explorer, Visual Studio, dnSpy, or PowerShell
 - if symbols are loaded correctly, line-level debugging becomes possible inside the custom Mono DLL
 
 ---
@@ -155,7 +155,7 @@ Important:
 Useful checks:
 
 - confirm file path of loaded `mono-2.0-bdwgc.dll`
-- confirm `.pdb` is loaded
+- confirm the `.pdb` is loaded
 - confirm module timestamp/size matches your compiled output
 - confirm the game is using the target `EmbedRuntime` path you replaced
 
@@ -165,7 +165,7 @@ If the debugger still cannot attach, common causes are:
 - symbols not loaded
 - wrong Mono variant
 - port conflict / reserved debugger ports
-- game using a different process/runtime instance than expected
+- the game is using a different process/runtime instance than expected
 
 ---
 
@@ -177,29 +177,29 @@ You can inspect reserved TCP ranges with:
 
 ```powershell
 netsh int ipv4 show excludedportrange tcp
-````
+```
 
 Also helpful:
 
-* verify listening ports with `Get-NetTCPConnection`
-* verify the loaded module path with `Get-Process <process> -Module`
-* verify symbol loading in dnSpy or Visual Studio
+- inspect listening ports with `Get-NetTCPConnection`
+- inspect the loaded module path with `Get-Process <process> -Module`
+- verify symbol loading in dnSpy or Visual Studio
 
 ---
 
 ## Repository scope
 
-This repository is **not** a universal Unity mono archive.
-It is a focused repo for one version:
+This repository is **not** a universal Unity mono archive.  
+It is a focused repo for one version only:
 
-* **Unity 2022.3.62f2**
+- **Unity 2022.3.62f2**
 
 That keeps it:
 
-* smaller
-* easier to maintain
-* easier to verify
-* easier for others to reuse specifically for this version
+- smaller
+- easier to maintain
+- easier to verify
+- easier for others to reuse specifically for this version
 
 If support for other Unity versions is needed, separate branches or separate repos are recommended.
 
@@ -209,15 +209,12 @@ If support for other Unity versions is needed, separate branches or separate rep
 
 Recommended:
 
-* keep `main` or `master` focused on `2022.3.62f2`
-* optionally create a branch like:
-
-  * `unity-2022.3.62f2`
-* publish a GitHub release containing:
-
-  * `mono-2.0-bdwgc.dll`
-  * `mono-2.0-bdwgc.pdb`
-  * short usage notes
+- keep `main` or `master` focused on `2022.3.62f2`
+- optionally create a branch like `unity-2022.3.62f2`
+- publish a GitHub release containing:
+  - `mono-2.0-bdwgc.dll`
+  - `mono-2.0-bdwgc.pdb`
+  - short usage notes
 
 ---
 
@@ -225,31 +222,26 @@ Recommended:
 
 Original foundation and idea:
 
-* Neoshrimp
-* notsapinho
-* dnSpy Unity mono community contributors
+- Neoshrimp
+- notsapinho
+- dnSpy Unity mono community contributors
 
-Version-specific adaptation, build fixes, cleanup and packaging for:
+Version-specific adaptation, build fixes, cleanup, and packaging for:
 
-* **Unity 2022.3.62f2**
+- **Unity 2022.3.62f2**
 
 ---
 
 ## Commit reference
 
-| version         | git hash                                 |
-| --------------- | ---------------------------------------- |
-| 2022.3.62f2-mbe | e2f0981f5c01bfa427f6aef9a9fa5cce45f51a55 |
+| version | git hash |
+|---|---|
+| 2022.3.62f2-mbe | `e2f0981f5c01bfa427f6aef9a9fa5cce45f51a55` |
 
 ---
 
 ## Disclaimer
 
-This repository is intended for reverse engineering, debugging, modding research, and compatibility work.
-Use at your own risk.
+This repository is intended for reverse engineering, debugging, modding research, and compatibility work.  
+Use it at your own risk.  
 Always back up original game files before replacing runtime DLLs.
-
-```
-
-Wenn du willst, mache ich dir direkt noch eine **kürzere, sauberere GitHub-README mit Install/Build/Usage/FAQ**, damit sie öffentlich deutlich professioneller wirkt.
-```
